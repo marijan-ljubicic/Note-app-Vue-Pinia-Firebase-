@@ -1,11 +1,7 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-</template>
+	<RouterLink to="/">Notes</RouterLink> | 
+	<RouterLink to="/stats">Stats</RouterLink>
 
-<style scoped></style>
+	<!--Display route template in a view/page-->
+	<RouterView/>  
+</template>
