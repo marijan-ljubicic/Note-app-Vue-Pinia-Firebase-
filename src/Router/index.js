@@ -5,7 +5,7 @@ import ViewStats from '@/views/ViewStats.vue'
 const routes = [
     {
         path: '/',  // root 'notes' view of the app
-        name: 'notes', // label fort the route
+        name: 'notes', // label for the route
         component: ViewNotes 
     },
     {
