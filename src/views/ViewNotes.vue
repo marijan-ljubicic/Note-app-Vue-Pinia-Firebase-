@@ -2,7 +2,7 @@
     <div class="p-6 max-w-3xl mx-auto space-y-8">
       
       <div 
-        v-for="(note, index) in notes" 
+        v-for="(note, index) in storeNotes.notes" 
         :key="note.id" 
         class="bg-white border border-purple-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
       >
@@ -27,14 +27,14 @@
           </button>
   
           <button 
-            @click="deleteNote(note.id)"
+            @click="storeNotes.deleteNote(note.id)"
             class="px-4 py-2 text-sm font-bold text-red-600 hover:bg-red-600 hover:text-white rounded-md transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-red-500/25"
           >
             Delete
           </button>
   
           <button 
-            @click="handleSave(note, index)"
+            @click="storeNotes.handleSave(note, index)"
             class="px-4 py-2 text-sm font-bold text-purple-800 hover:bg-purple-700 hover:text-white rounded-md transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-purple-500/25"
           >
             Save
@@ -47,7 +47,9 @@
   
   <script setup>
   import { ref } from 'vue'
+  import { useStoreNotes } from '@/Store/StoreNotes' // Import your store
   
+  const storeNotes = useStoreNotes() // Initialize store access
   const notes = ref([
     {
       id: Date.now(),
